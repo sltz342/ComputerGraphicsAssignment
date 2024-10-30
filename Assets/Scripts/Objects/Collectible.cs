@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,12 @@ public class Collectible : MonoBehaviour
             Destroy(gameObject); 
         }
 
+    }
+
+    private float currentRotation;
+    private void FixedUpdate()
+    {
+        currentRotation = transform.rotation.y + 0.5f;
+        transform.Rotate(0,currentRotation,0);
     }
 }

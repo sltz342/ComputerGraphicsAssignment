@@ -29,6 +29,14 @@ public static class InputManager
             myPlayer.setLookDirection(ctx.ReadValue<Vector2>());
         };
 
+        controls.Game.Sprint.performed += ctx =>
+        {
+            myPlayer.sprintSpeed = true;
+        };
+        controls.Game.Sprint.canceled += ctx =>
+        {
+            myPlayer.sprintSpeed = false;
+        };
 
 
         controls.Game.Enable();

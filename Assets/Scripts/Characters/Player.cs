@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 {
     //Vars for speeds
     [SerializeField] private float speed;
+    public bool sprintSpeed = false;
 
     //Vars for jumping
     [SerializeField] private float jumpForce;
@@ -22,7 +23,6 @@ public class Player : MonoBehaviour
 
     //Vars for movement and cubePrefab
     private Vector3 _moveDir;
-    public GameObject cubePrefab;
 
     //Vars for Mouse Camera Control
     [SerializeField, Range(1, 20)] private float mouseSensX;
@@ -38,24 +38,7 @@ public class Player : MonoBehaviour
     private int coinsCollected = 0;
     
     
-    //For UI and Health Shown
-    [Header("Player UI")]
-    [SerializeField] private Image healthBar;
-    [SerializeField] private TextMeshProUGUI healthShown;
-
-
-    [SerializeField] private float maxHealth;
-    private float _health;
-
     
-    private float Health
-    {
-        get => _health;
-        set { 
-            _health = value;
-            healthBar.fillAmount = _health / maxHealth;
-        }
-    }
     
     
     // Start is called before the first frame update
@@ -63,34 +46,36 @@ public class Player : MonoBehaviour
     {
         InputManager.Init(this);
 
-        healthShown.text = "Health";
         rb = GetComponent<Rigidbody>();
         depth = GetComponent<Collider>().bounds.size.y;
 
-        Health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (sprintSpeed)
+        {
+            speed = 8;
+        }
+        else
+        {
+            speed = 5;
+        }
         transform.position += transform.rotation * (speed * Time.deltaTime * _moveDir);
         CheckGround();
     }
     public void setMovementDirection(Vector3 newDirection)
     {
         _moveDir = newDirection;
-
-
     }
     
     public void jump() {
         Debug.Log("Jump called");
-        if(isGrounded )
+        if(isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-
-    
     }
     
     public void setLookDirection(Vector2 readValue)
@@ -112,7 +97,7 @@ public class Player : MonoBehaviour
     
     private void CheckGround()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, depth, groundLayers);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, depth);
 
         Debug.DrawRay(transform.position, Vector3.down * depth, Color.red, 0, false);
     }
