@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 
     //For Coin Collection
     private int coinsCollected = 0;
+    [SerializeField] private TMP_Text coinText;
     
     
     
@@ -64,6 +65,11 @@ public class Player : MonoBehaviour
         }
         transform.position += transform.rotation * (speed * Time.deltaTime * _moveDir);
         CheckGround();
+
+        if (coinsCollected == 8)
+        {
+            coinText.transform.position = new Vector3(0,200,0);
+        }
     }
     public void setMovementDirection(Vector3 newDirection)
     {
