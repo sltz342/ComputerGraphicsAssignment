@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CoinShaderMat
-  m_Shader: {fileID: 4800000, guid: 5406df9a2f01c814cb59fd89ee1fe32e, type: 3}
+  m_Name: Outline
+  m_Shader: {fileID: 4800000, guid: 25117ee72d78ce748b8156d7214a8160, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -51,10 +51,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MetallicTex:
-        m_Texture: {fileID: 2800000, guid: 68ad6f0ec30fffb448e3cc9802093a6d, type: 3}
-        m_Scale: {x: 4, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,22 +66,21 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.405
     - _GlossyReflections: 1
-    - _Metallic: 0.616
+    - _Metallic: 0.147
     - _Mode: 0
     - _OcclusionStrength: 1
+    - _Outline: 0.05
     - _Parallax: 0.02
-    - _RimPower: 3
-    - _Shininess: 1.85
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0.5885796, b: 0.0039215684, a: 1}
+    - _Color: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 1, g: 0.53792727, b: 0, a: 0}
-    - _SpecColor: {r: 1, g: 0.82151043, b: 0.13679248, a: 1}
+    - _MainTex: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.41712385, g: 1, b: 0.07075471, a: 1}
   m_BuildTextureStacks: []
