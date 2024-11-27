@@ -9,6 +9,9 @@ These assets were used to create a more imaginative sky for the player, as creat
 Within the Repo and Release, there lies assets for glass textures I did not create, nor modify and otherwise are uninfluenced by me. These assets are Glass Window 003 created by Katsukagi on 15/06/2021.
 These assets were obtained from 3dtextures.me and I do not claim ownership, nor copyright over them. I used them simply to demonstrate an ideal texture for a surface. You can obtain these textures at (https://3dtextures.me/2021/06/15/glass-window-003/)
 
+You can find the video for my project at the links following: [https://youtu.be/ZbK9qy0TZko]
+
+
 Part 1: Improvements:
 ![image](https://github.com/user-attachments/assets/5e34376d-b55c-47c5-aff1-f9d7be3ffc62)
 
